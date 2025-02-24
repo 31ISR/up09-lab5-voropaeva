@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%1l16+yv2*t^^ln85kl7rpd==m82&yf4v!!ra(9^q!$e81(dsw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+
 
 ALLOWED_HOSTS = ["localhost","127.0.0.1"]
 
@@ -69,6 +69,16 @@ TEMPLATES = [
             ],
         },
     },
+]
+DEBUG = True
+
+STATIC_URL = 'static/'
+MEDIA_URL = 'media/'
+STATIC_ROOT = BASE_DIR / 'assets'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static/'
 ]
 
 WSGI_APPLICATION = 'lab1.wsgi.application'
@@ -131,11 +141,4 @@ CSRF_TRUSTED_ORIGINS = [
     'https://ubiquitous-space-cod-5gx6rj7v457wf4jg7-8000.app.github.dev',  # Wildcard for subdomains
 ]
 
-STATIC_URL = 'static/'
 
-STATIC_ROOT = BASE_DIR / 'assets'
-MEDIA_ROOT = BASE_DIR / 'media'
-
-STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-]
